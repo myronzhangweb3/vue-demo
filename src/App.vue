@@ -126,20 +126,20 @@ export default {
       role: 'role1', // 当前角色：控制不同的选项和按钮
       // 表格数据，每项有唯一的id、名称、描述和是否可修改状态
       tableData: [
-        { id: 1, name: 'Item 1', type: 'type1', value: 'value1', description: 'Description 1', canModify: false, option1: null, option2: null },
-        { id: 2, name: 'Item 2', type: 'type1', value: 'value2', description: 'Description 2', canModify: true, option1: null, option2: null },
-        { id: 3, name: 'Item 3', type: 'type1', value: 'value3', description: 'Description 3', canModify: false, option1: null, option2: null },
-        { id: 4, name: 'Item 4', type: 'type1', value: 'value4', description: 'Description 4', canModify: true, option1: null, option2: null },
-        { id: 5, name: 'Item 5', type: 'type1', value: 'value5', description: 'Description 5', canModify: false, option1: null, option2: null },
-        { id: 6, name: 'Item 6', type: 'type1', value: 'value6', description: 'Description 6', canModify: false, option1: null, option2: null }
+        {id: 1, name: 'Item 1', type: 'type1', value: 'value1', description: 'Description 1', canModify: false},
+        {id: 2, name: 'Item 2', type: 'type1', value: 'value2', description: 'Description 2', canModify: true},
+        {id: 3, name: 'Item 3', type: 'type1', value: 'value3', description: 'Description 3', canModify: false},
+        {id: 4, name: 'Item 4', type: 'type1', value: 'value4', description: 'Description 4', canModify: true},
+        {id: 5, name: 'Item 5', type: 'type1', value: 'value5', description: 'Description 5', canModify: false},
+        {id: 6, name: 'Item 6', type: 'type1', value: 'value6', description: 'Description 6', canModify: false}
       ],
       options1: [
-        { label: '选项A', value: 'A' },
-        { label: '选项B', value: 'B' }
+        {label: '选项A', value: 'A'},
+        {label: '选项B', value: 'B'}
       ],
       options2: [
-        { label: '选项C', value: ['C', 1] },
-        { label: '选项D', value: ['D', 5] }
+        {label: '选项C', value: ['C', 1]},
+        {label: '选项D', value: ['D', 5]}
       ],
       selected: null, // 当前选中的单选列id
       selectList: [], // 当前选中的多选项列表
@@ -173,7 +173,7 @@ export default {
     // 保存更改
     save() {
       this.dialogVisible = false;
-      this.$message.success("保存成功. Data: "+ JSON.stringify(this.selectList));
+      this.$message.success("保存成功. Data: " + JSON.stringify(this.selectList));
     },
     // 从 selectList 中移除某项
     removeItem(index) {
