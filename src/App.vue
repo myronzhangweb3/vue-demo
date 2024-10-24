@@ -74,8 +74,8 @@ export default {
   data() {
     return {
       query: '',
-      // role: 'role1',
-      role: 'role2',
+      role: 'role1',
+      // role: 'role2',
       tableData: [],
       options1: [],
       options2: [
