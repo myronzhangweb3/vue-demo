@@ -32,7 +32,7 @@
               </div>
             </el-option>
             <el-option
-                v-for="option in options2"
+                v-for="option in getOptionData(scope.row.optionValue1)"
                 :key="option.label"
                 :value="option.value">
               <div>
@@ -116,6 +116,19 @@ export default {
     },
     closeDialog() {
       this.$emit('update:visible', false);
+    },
+    getOptionData(optionValue1) {
+      console.log("getOptionData", optionValue1)
+      if (!optionValue1) {
+        return []
+      }
+      if (optionValue1 === "A") {
+        return [{label: '选项A-1', value: ['A-1', 1]},
+          {label: '选项A-2', value: ['A-2', 5]}]
+      } else {
+        return [{label: '选项B-1', value: ['B-1', 1]},
+          {label: '选项B-2', value: ['B-2', 5]}]
+      }
     }
   }
 };

@@ -15,7 +15,7 @@
 
       <!-- 下部分：列表展示 -->
       <el-footer>
-        <el-table :data="paginatedTableData" @selection-change="handleSelectionChange">
+        <el-table :class="{'hidden-selelct-all': role === 'role2'}" :data="paginatedTableData" @selection-change="handleSelectionChange">
           <el-table-column
               v-if="role === 'role1'"
               type="selection"
@@ -77,7 +77,10 @@ export default {
       role: 'role1',
       // role: 'role2',
       tableData: [],
-      options1: [],
+      options1: [
+        {label: '1', value: ['1', 1]},
+        {label: '2', value: ['2', 5]}
+      ],
       options2: [
         {label: '选项C', value: ['C', 1]},
         {label: '选项D', value: ['D', 5]}
@@ -145,7 +148,7 @@ export default {
       ];
     },
     initOption1() {
-      this.options1 = [{label: '选项A', value: 'A'}, {label: '选项B', value: 'B'}];
+      this.options1 = [{label: '选项1-A', value: 'A'}, {label: '选项1-B', value: 'B'}];
     },
     handlePageChange(val) {
       this.currentPage = val;
@@ -160,4 +163,9 @@ export default {
   margin: 0 auto;
   padding: 20px;
 }
+
+.hidden-selelct-all .el-table__header-wrapper .el-checkbox__inner {
+	display: none !important;
+}
+
 </style>
